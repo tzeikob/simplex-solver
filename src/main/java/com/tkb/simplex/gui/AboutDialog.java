@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 import java.util.ResourceBundle;
 import java.util.MissingResourceException;
 import java.util.Locale;
+import javax.swing.JTextArea;
 import org.apache.log4j.Logger;
 
 /**
@@ -34,14 +35,26 @@ public class AboutDialog extends JDialog implements MouseListener {
 
         StringBuilder text = new StringBuilder();
 
-        text.append("Copyright 2007, Akis Papadopoulos iakopap@gmail.com");
+        text.append("\nCopyright 2007, Akis Papadopoulos\n\n")
+                .append("Simplex solver is an open source experimental project, a desktop application for 2D/3D linear\n")
+                .append("problem solving using the Simplex algorithm geometry.\n\n")
+                .append("The repository is available on https://github.com/tzeikob/simplex-solver and is\n\n")
+                .append("Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this\n")
+                .append("file except in compliance with the License. You may obtain a copy of the License at \n\n")
+                .append("http://www.apache.org/licenses/LICENSE-2.0 \n\n")
+                .append("Unless required by applicable law or agreed to in writing, software distributed under the\n")
+                .append("License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,\n")
+                .append("either express or implied. See the License for the specific language governing permissions\n")
+                .append("and limitations under the License.\n\n")
+                .append("Contact information, iakopap@gmail.com\n");
 
-        JLabel label = new JLabel(text.toString());
-        label.addMouseListener(this);
-        add(label);
+        JTextArea textArea = new JTextArea(text.toString());
+        textArea.addMouseListener(this);
+        add(textArea);
+        textArea.setEditable(false);
 
         pack();
-
+        
         setLocationRelativeTo(parent);
         setResizable(false);
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
