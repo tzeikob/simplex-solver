@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.tkb.lib</groupId>
+    <artifactId>simplex-solver</artifactId>
+    <name>simplex-solver</name>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+    <description>A desktop application for 2D/3D linear problem solving using the Simplex algorithm geometry.</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <exec.classpath.home>${project.build.directory}/lib/</exec.classpath.home>
+    </properties>
+    
+    <dependencies>
+        <!-- mvn install:install-file -Dfile=lib/jxl-1.0.jar -DgroupId=com.tkb.lib -DartifactId=jxl -Dversion=1.0 -Dpackaging=jar -->
+        <dependency>
+            <groupId>com.tkb.lib</groupId>
+            <artifactId>encoder</artifactId>
+            <version>1.0</version>
+        </dependency>
+        
+        <!-- mvn install:install-file -Dfile=lib/encoder-1.0.jar -DgroupId=com.tkb.lib -DartifactId=encoder -Dversion=1.0 -Dpackaging=jar -->
+        <dependency>
+            <groupId>com.tkb.lib</groupId>
+            <artifactId>jxl</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+                
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <debug>true</debug>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.tkb.simplex.exec.Dispatcher</mainClass>
+                            <classpathPrefix>${exec.classpath.home}</classpathPrefix>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.5.1</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <includeScope>runtime</includeScope>
+                            <outputDirectory>${exec.classpath.home}</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
