@@ -263,7 +263,7 @@ public class MainFrame extends JFrame implements WindowListener, MouseListener, 
         refreshaction = new RefreshAction(canvas);
 
         aboutaction = new AboutAction(this);
-        helpaction = new HelpAction();
+        helpaction = new HelpAction(this);
 
         setJMenuBar(createMenuBar());
 
