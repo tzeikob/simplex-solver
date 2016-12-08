@@ -86,7 +86,6 @@ public class Canvas extends JPanel implements Runnable, ComponentListener, Mouse
         this.status = status;
 
         view = new View(radius, phi, theta);
-        view.createImage(500, 500);
 
         axes = new Axes("x1", "x2", "x3", "", "", "", Axes.GUIDELINES + Axes.MEASUREMENTS);
         axes.setOpacity(80);
@@ -174,6 +173,8 @@ public class Canvas extends JPanel implements Runnable, ComponentListener, Mouse
                             }
                         }
                     }
+                } else {
+                    view.createImage(500, 500);
                 }
             } catch (NullPointerException exc) {
                 logger.error(exc.getMessage(), exc);
