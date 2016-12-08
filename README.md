@@ -83,7 +83,7 @@ Assuming you have already installed a JRE into your system and set the JAVA_HOME
 java -jar simplex-solver-<version>.jar
 ```
 
-in the very rare case you did not set the JAVA_HOME enviroment variable, you must locate the folder where the JRE is installed and execute the following command into the terminal,
+in the very rare case you did not set the JAVA_HOME enviroment variable, you must locate the folder where the JRE is installed in the hard disk and execute the following command into the terminal,
 
 ```
 path/to/jre/bin/java -jar simplex-solver-<version>.jar
