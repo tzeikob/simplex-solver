@@ -1,6 +1,7 @@
 # Introduction #
 Simplex solver is an experimental open source standalone desktop application written in Java and is released under the Apache License 2.0. The application uses the [Simplex](https://en.wikipedia.org/wiki/Simplex_algorithm)'s algorithm geometry in order to emulate the solving process of a given linear problem both in 2D and 3D dimensions. Source code and other utilities are included in this repository. This document contains only a short brief summary of the project structure as also some tutorials in how to build and use this software. For more up to date information about the project, changelog and issues, please check the links below.
 
+* [Documentation](https://github.com/tzeikob/simplex-solver/wiki)
 * [Repository](https://github.com/tzeikob/simplex-solver)
 * [Bug Reports](https://github.com/tzeikob/simplex-solver/issues)
 * [Contributors](https://github.com/tzeikob/simplex-solver/graphs/contributors)
