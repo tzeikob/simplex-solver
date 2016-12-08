@@ -66,15 +66,11 @@ public class Canvas extends JPanel implements Runnable, ComponentListener, Mouse
 
     private StatusBar status;
 
-    private static int captured = 0;
-
     private boolean recording = false;
 
     private AnimatedGifEncoder encoder;
 
     private FileOutputStream out;
-
-    private static int recorded = 0;
 
     static {
         try {
