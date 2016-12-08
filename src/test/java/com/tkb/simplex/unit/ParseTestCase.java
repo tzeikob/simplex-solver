@@ -50,8 +50,6 @@ public class ParseTestCase {
 
         LinearProblem problem = parser.parse(text);
 
-        logger.info(problem);
-
         assertNotNull(problem);
         assertTrue(problem.A()[1][1] == -3);
         assertTrue(problem.b()[1][0] == 4);
