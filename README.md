@@ -88,3 +88,6 @@ in the very rare case you did not set the JAVA_HOME enviroment variable, you mus
 ```
 path/to/jre/bin/java -jar simplex-solver-<version>.jar
 ```
+
+## Examples ##
+In the folder `data/` of the repository you can find various examples of linear problems in textual form in order to parse them into the software.
