@@ -7,7 +7,7 @@
     <groupId>com.tzeikob</groupId>
     <artifactId>simplex-solver</artifactId>
     <name>simplex-solver</name>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
     <description>A desktop application for 2D/3D linear problem solving using the Simplex algorithm geometry.</description>
 
