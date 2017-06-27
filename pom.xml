@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.tkb.lib</groupId>
+    <groupId>com.tzeikob</groupId>
     <artifactId>simplex-solver</artifactId>
     <name>simplex-solver</name>
     <version>1.0</version>
@@ -19,17 +19,17 @@
     </properties>
     
     <dependencies>
-        <!-- mvn install:install-file -Dfile=lib/jxl-1.0.jar -DgroupId=com.tkb.lib -DartifactId=jxl -Dversion=1.0 -Dpackaging=jar -->
+        <!-- mvn install:install-file -Dfile=lib/encoder-1.0.jar -DgroupId=com.tzeikob -DartifactId=simplex-solver-encoder -Dversion=1.0 -Dpackaging=jar -->
         <dependency>
-            <groupId>com.tkb.lib</groupId>
-            <artifactId>encoder</artifactId>
+            <groupId>com.tzeikob</groupId>
+            <artifactId>simplex-solver-encoder</artifactId>
             <version>1.0</version>
         </dependency>
         
-        <!-- mvn install:install-file -Dfile=lib/encoder-1.0.jar -DgroupId=com.tkb.lib -DartifactId=encoder -Dversion=1.0 -Dpackaging=jar -->
+        <!-- mvn install:install-file -Dfile=lib/jxl-1.0.jar -DgroupId=com.tzeikob -DartifactId=simplex-solver-jxl -Dversion=1.0 -Dpackaging=jar -->
         <dependency>
-            <groupId>com.tkb.lib</groupId>
-            <artifactId>jxl</artifactId>
+            <groupId>com.tzeikob</groupId>
+            <artifactId>simplex-solver-jxl</artifactId>
             <version>1.0</version>
         </dependency>
 
