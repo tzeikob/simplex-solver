@@ -1,5 +1,5 @@
 # Introduction #
-Simplex solver is an experimental open source standalone desktop application written in Java and is released under the Apache License 2.0. The application uses the [Simplex](https://en.wikipedia.org/wiki/Simplex_algorithm)'s algorithm geometry in order to emulate the solving process of a given linear problem both in 2D and 3D dimensions. Source code and other utilities are included in this repository. This document contains only a short brief summary of the project structure as also some tutorials in how to build and use this software. For more up to date information about the project, changelog and issues, please check the links below.
+Simplex solver is an experimental open source standalone desktop application written in Java and is released under the MIT license. The application uses the [Simplex](https://en.wikipedia.org/wiki/Simplex_algorithm)'s algorithm geometry in order to emulate the solving process of a given linear problem both in 2D and 3D dimensions. Source code and other utilities are included in this repository. This document contains only a short brief summary of the project structure as also some tutorials in how to build and use this software. For more up to date information about the project, changelog and issues, please check the links below.
 
 * [Documentation](https://github.com/tzeikob/simplex-solver/wiki)
 * [Repository](https://github.com/tzeikob/simplex-solver)
@@ -31,16 +31,16 @@ git clone https://github.com/tzeikob/simplex-solver.git
 cd simplex-solver
 
 mvn install:install-file\
-   -Dfile=lib/jxl-1.0.jar\
-   -DgroupId=com.tkb.lib\
-   -DartifactId=jxl\
+   -Dfile=lib/encoder-1.0.jar\
+   -DgroupId=com.tzeikob\
+   -DartifactId=simplex-solver-encoder\
    -Dversion=1.0\
    -Dpackaging=jar
 
 mvn install:install-file\
-   -Dfile=lib/encoder-1.0.jar\
-   -DgroupId=com.tkb.lib\
-   -DartifactId=encoder\
+   -Dfile=lib/jxl-1.0.jar\
+   -DgroupId=com.tzeikob\
+   -DartifactId=simplex-solver-jxl\
    -Dversion=1.0\
    -Dpackaging=jar
 ```
@@ -65,7 +65,7 @@ for now on you can add it as dependency into other projects, just by adding into
 
 ```
 <dependency>
- <groupId>com.tkb.lib</groupId>
+ <groupId>com.tzeikob</groupId>
  <artifactId>simplex-solver</artifactId>
  <version>${version}</version>
 </dependency>

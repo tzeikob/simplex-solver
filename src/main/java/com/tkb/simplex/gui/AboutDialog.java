@@ -2,9 +2,11 @@ package com.tkb.simplex.gui;
 
 import javax.swing.JDialog;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ResourceBundle;
 import java.util.MissingResourceException;
 import java.util.Locale;
@@ -35,18 +37,20 @@ public class AboutDialog extends JDialog implements MouseListener {
 
         StringBuilder text = new StringBuilder();
 
-        text.append("\nCopyright 2007, Akis Papadopoulos\n\n")
-                .append("Simplex solver is an open source experimental project, a desktop application for 2D/3D linear\n")
+        text.append("Simplex solver is an open source experimental project, a desktop application for 2D/3D linear\n")
                 .append("problem solving using the Simplex algorithm geometry.\n\n")
-                .append("The repository is available on https://github.com/tzeikob/simplex-solver and is\n\n")
-                .append("Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this\n")
-                .append("file except in compliance with the License. You may obtain a copy of the License at \n\n")
-                .append("http://www.apache.org/licenses/LICENSE-2.0 \n\n")
-                .append("Unless required by applicable law or agreed to in writing, software distributed under the\n")
-                .append("License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,\n")
-                .append("either express or implied. See the License for the specific language governing permissions\n")
-                .append("and limitations under the License.\n\n")
-                .append("Contact information, iakopap@gmail.com\n");
+                .append("The repository is available on https://github.com/tzeikob/simplex-solver.\n\n");
+
+        try (BufferedReader br = new BufferedReader(new FileReader("LICENSE"))) {
+            String line = null;
+            while ((line = br.readLine()) != null) {
+                text.append(line).append('\n');
+            }
+        } catch (IOException exc) {
+            text.append("Missing LICENSE file\n");
+        }
+
+        text.append("\nContact information, iakopap@gmail.com\n");
 
         JTextArea textArea = new JTextArea(text.toString());
         textArea.addMouseListener(this);
@@ -54,7 +58,7 @@ public class AboutDialog extends JDialog implements MouseListener {
         textArea.setEditable(false);
 
         pack();
-        
+
         setLocationRelativeTo(parent);
         setResizable(false);
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
